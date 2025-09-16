@@ -1,0 +1,458 @@
+/* ========================================================================
+   GLOBAL DESIGN TOKENS
+   ------------------------------------------------------------------------
+   Centralize all colors and common values here.
+   ======================================================================== */
+:root {
+  --brand: #c9463b;      /* Primary brand color */
+  --brand-700: #a63931;  /* Darker shade of brand */
+  --cream: #fff7ee;      /* Soft background */
+  --ink: #2d2a26;        /* Main text color */
+  --muted: #6c757d;      /* Muted text color */
+  --border: rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 10px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================================
+   BASE LAYOUT
+   ======================================================================== */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  /* Ensures footer stays at the bottom when content is short */
+  flex: 1;
+}
+
+/* ========================================================================
+   HEADER (works for .header and .site-header)
+   ======================================================================== */
+.header {
+  position: relative;
+  z-index: 1500; /* Keeps header above cards and other elements */
+}
+
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header .container {
+  overflow: visible; /* Prevent container from clipping dropdown menu */
+}
+
+.header .container,
+.site-header .container {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+/* Brand mark */
+.brand-logo {
+  height: 36px;
+  width: auto;
+}
+@media (min-width: 992px) {
+  .brand-logo {
+    height: 40px;
+  }
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--brand);
+}
+
+/* Header links */
+.header a,
+.site-header a {
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.header a:hover,
+.site-header a:hover {
+  color: var(--brand);
+}
+
+/* ========================================================================
+   LINKS (general)
+   ======================================================================== */
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand-700);
+  text-decoration: none;
+}
+
+/* ========================================================================
+   BUTTONS
+   ======================================================================== */
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+/* Soft pill button for brand color */
+.btn-soft-primary {
+  background: rgba(201, 70, 59, 0.08);
+  border: 1px solid rgba(201, 70, 59, 0.35);
+  color: var(--brand);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+}
+
+.btn-soft-primary:hover {
+  background: rgba(201, 70, 59, 0.14);
+  color: var(--brand-700);
+}
+
+/* Soft pill button for info color */
+.btn-soft-info {
+  background: rgba(0, 184, 212, 0.08);
+  border: 1px solid rgba(0, 184, 212, 0.35);
+  color: #00b8d4;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+}
+
+.btn-soft-info:hover {
+  background: rgba(0, 184, 212, 0.14);
+}
+
+/* Ghost button (text-like style) */
+.btn-ghost {
+  border: none;
+  background: transparent;
+  color: var(--brand);
+  border-radius: 999px;
+  padding: 0.45rem 0.2rem;
+}
+
+.btn-ghost:hover {
+  color: var(--brand-700);
+}
+
+/* Primary button override aligned with brand */
+.btn-primary {
+  background-color: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-700);
+  border-color: var(--brand-700);
+}
+
+/* Cart button with icon and badge */
+.btn-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  position: relative; /* Needed for badge positioning */
+}
+
+.btn-cart svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================================================
+   FORMS
+   ======================================================================== */
+.form-control,
+.form-select {
+  border-radius: 12px;
+  border-color: var(--border);
+}
+
+/* ========================================================================
+   CARDS
+   ======================================================================== */
+.card {
+  border: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+/* ========================================================================
+   FOOTER
+   ======================================================================== */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  color: #6b6b6b;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+.site-footer a:hover {
+  color: var(--brand);
+}
+
+/* ========================================================================
+   HAMBURGER ICON (3 lines)
+   ======================================================================== */
+.hamburger {
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+}
+
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  top: 6px;
+}
+
+/* ========================================================================
+   CART BADGE (re-usable)
+   ======================================================================== */
+.badge-cart {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  font-size: 11px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--brand);
+}
+
+/* ========================================================================
+   DASHBOARD / KPI WIDGETS
+   ======================================================================== */
+.kpi-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.kpi-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.kpi-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Mini bar chart (simple spark bars) */
+.mini-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 100px;
+}
+
+.mini-bar {
+  width: 8px;
+  background: rgba(13, 110, 253, 0.25); /* Soft blue for contrast */
+  border-radius: 4px 4px 0 0;
+  transition: height 0.2s ease, background 0.2s ease;
+}
+
+.mini-bar:hover {
+  background: rgba(13, 110, 253, 0.45);
+}
+
+/* ========================================================================
+   MOBILE STYLES
+   ======================================================================== */
+@media (max-width: 576px) {
+  /* Full-screen scrim behind the menu */
+  .dropdown-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 2990; /* Below menu (3000), above other content */
+  }
+
+  /* Turn dropdown into a fixed panel */
+  .dropdown .dropdown-menu {
+    position: fixed !important;
+    top: 56px; /* Adjust if header is taller */
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92vw, 420px);
+    max-height: 65vh;
+    overflow: auto;
+    border-radius: 14px;
+    z-index: 3000;
+  }
+
+  /* Mobile animation from slightly higher */
+  .dropdown .dropdown-menu {
+    opacity: 0;
+    transform: translate(-50%, -6px);
+  }
+
+  .dropdown .dropdown-menu.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Hide "Cart" text on small screens, keep icon & badge */
+@media (max-width: 576px) {
+  .btn-cart span {
+    display: none;
+  }
+
+  /* Keep badge visible and correctly positioned */
+  .btn-cart .badge-cart {
+    display: inline-flex;
+  }
+}
+
+
+/* =========================================================================
+   BUTTON POLISH (consistent size, borders, hovers, focus)
+   Append at the end of your stylesheet
+   ========================================================================= */
+:root {
+  --btn-vpad: 0.35rem;   /* vertical padding for consistent height */
+  --btn-hpad: 0.8rem;    /* horizontal padding default */
+  --btn-radius: 999px;   /* pill shape */
+  --btn-border: rgba(0,0,0,0.15);
+}
+
+/* Base: same height & shape for all header pills */
+.btn,
+.btn-soft-primary,
+.btn-soft-info,
+.btn-ghost,
+.btn-cart {
+  border-radius: var(--btn-radius);
+  padding: var(--btn-vpad) var(--btn-hpad);
+  line-height: 1.2;
+}
+
+/* Borders: keep soft variants with their own color, others get neutral */
+.btn { border: 1px solid var(--btn-border); }
+.btn-soft-primary { border: 1px solid rgba(201,70,59,0.35); }
+.btn-soft-info    { border: 1px solid rgba(0,184,212,0.35); }
+/* Primary keeps brand border (you already set colors above) */
+.btn-primary { border: 1px solid var(--brand); }
+
+/* Ghost stays text-like: slimmer horizontal padding, no border */
+.btn-ghost {
+  border: 0;
+  padding: var(--btn-vpad) 0.5rem;
+}
+
+/* Cart button: same height but a bit tighter horizontally */
+.btn-cart {
+  padding: var(--btn-vpad) 0.75rem;
+}
+
+/* Hover/active feedback (subtle and consistent) */
+.btn:hover,
+.btn-soft-primary:hover,
+.btn-soft-info:hover,
+.btn-ghost:hover,
+.btn-cart:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.btn:active,
+.btn-soft-primary:active,
+.btn-soft-info:active,
+.btn-ghost:active,
+.btn-cart:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Focus visibility for accessibility */
+.btn:focus-visible,
+.btn-soft-primary:focus-visible,
+.btn-soft-info:focus-visible,
+.btn-ghost:focus-visible,
+.btn-cart:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--brand) 65%, white);
+  outline-offset: 2px;
+}
+
+/* Optional: unify icon sizing inside pill buttons */
+.btn svg,
+.btn-cart svg {
+  width: 18px;
+  height: 18px;
+}

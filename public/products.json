@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "slug": "chocolate-fudge-cake",
+    "name": "Chocolate Fudge Cake",
+    "price": 24.9,
+    "category": "cake",
+    "description": "Moist cocoa sponge with rich fudge frosting.",
+    "image": "/img/ChocolateFudgeCake.jpg",
+    "tags": ["chocolate", "fudge"]
+  },
+  {
+    "id": "2",
+    "slug": "lemon-drizzle-cake",
+    "name": "Lemon Drizzle Cake",
+    "price": 21.5,
+    "category": "cake",
+    "description": "Zesty lemon syrup with a light glaze.",
+    "image": "/img/LemonDrizzleCake.jpg",
+    "tags": ["lemon", "citrus"]
+  },
+  {
+    "id": "3",
+    "slug": "red-velvet-cupcake",
+    "name": "Red Velvet Cupcake",
+    "price": 3.0,
+    "category": "cupcake",
+    "description": "Classic cocoa with cream cheese frosting.",
+    "image": "/img/RedVelvetCupcake.jpg",
+    "tags": ["cupcake", "red-velvet"]
+  },
+  {
+    "id": "4",
+    "slug": "vanilla-cupcakes-6",
+    "name": "Vanilla Cupcakes",
+    "price": 2.5,
+    "category": "cupcake",
+    "description": "Fluffy vanilla sponge with buttercream.",
+    "image": "/img/VanillaCupcake.jpg",
+    "tags": ["vanilla", "cupcake"]
+  },
+  {
+    "id": "5",
+    "slug": "carrot-cake",
+    "name": "Carrot Cake",
+    "price": 22.0,
+    "category": "cake",
+    "description": "Spiced sponge with cream cheese icing.",
+    "image": "/img/CarrotCake.jpg",
+    "tags": ["carrot", "spice"]
+  },
+  {
+    "id": "6",
+    "slug": "strawberry-shortcake",
+    "name": "Strawberry Shortcake",
+    "price": 23.5,
+    "category": "cake",
+    "description": "Fresh strawberries and whipped cream.",
+    "image": "/img/StrawberryShortCake.jpg",
+    "tags": ["strawberry", "fruit"]
+  }
+]

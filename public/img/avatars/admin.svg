@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <rect width="160" height="160" rx="24" fill="#1e3a8a"/>
+  <circle cx="80" cy="70" r="32" fill="#fff" opacity="0.95"/>
+  <rect x="35" y="105" width="90" height="32" rx="16" fill="#fff" opacity="0.95"/>
+  <text x="80" y="116" text-anchor="middle" font-family="Inter, system-ui" font-size="20" fill="#1e3a8a">ADMIN</text>
+</svg>

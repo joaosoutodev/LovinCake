@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "serve": "deno run -A --watch=static/,routes/ index.ts"
+  },
+  "lint": { "rules": { "tags": ["recommended"] } }
+}
